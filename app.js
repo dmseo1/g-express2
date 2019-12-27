@@ -20,7 +20,6 @@ app.set('html', require('ejs').renderFile);
 app.use(express.json())
 //정적파일 기본경로 등록을 위한 미들웨어 등록
 app.use(express.static(path.join(__dirname, 'public')));
-
 //라우터 등록
 app.use('/', indexRouter);
 app.use('/people', userRouter);
