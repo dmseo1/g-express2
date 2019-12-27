@@ -5,7 +5,7 @@ require('dotenv').config();
 
 //[기초세팅]
 //뷰 템플릿 기본 폴더 지정
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));    //views 폴더는 ~~ 여기예요~~~
 //뷰 엔진을 ejs로 쓰겠다
 app.set('view engine', 'ejs');
 //html을 ejs를 이용하여 렌더링하겠다
