@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express();
+var app = express();    //이 메소드가 실행되는 순간 서버까지 만들어진다.
 var path = require('path');
 require('dotenv').config();
 
@@ -8,7 +8,7 @@ var userRouter = require('./router/user');
 
 
 //[기초세팅]
-//뷰 템플릿 기본 폴더 지정
+//뷰(템플릿) 기본 폴더 지정
 app.set('views', path.join(__dirname, 'views'));    //views 폴더는 ~~ 여기예요~~~
 //뷰 엔진을 ejs로 쓰겠다
 app.set('view engine', 'ejs');
@@ -26,6 +26,10 @@ app.use('/people', userRouter);
 
 
 var port = process.env.PORT || 3000;
+
+//원래 순서는 포트, url, 백로그, 콜백함수
+//var url = '192.32.32.32'
+//app.listen(port, url, backlog, callback);
 app.listen(port, () => {
     console.log(`서버가 시작되었습니다: http://localhost:${port}`);
 });
